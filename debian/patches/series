@@ -8,3 +8,4 @@ deepin_07_fix_translate_error.patch
 deepin_08_fix_helper_exit_error.patch
 deepin_09_fix_polkit_language_env.patch
 deepin_10_fix_remove_dependencies.patch
+deepin_11_fix_locale_override.patch

@@ -1,8 +1,8 @@
-policykit-1 (126-2deepin1) unstable; urgency=medium
+policykit-1 (126-2deepin2) unstable; urgency=medium
 
-  * chore(debian): restore deepin patches for upstream 126-2 upgrade
+  * fix(patches): add upstream locale fix patch
 
- -- Kun Zhang <zhangkun2@uniontech.com>  Mon, 20 Apr 2026 16:37:46 +0100
+ -- Kun Zhang <zhangkun2@uniontech.com>  Mon, 20 Apr 2026 17:37:16 +0100
 
 policykit-1 (126-2) unstable; urgency=medium
 

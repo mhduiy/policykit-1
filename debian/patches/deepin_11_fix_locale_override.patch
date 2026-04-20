@@ -1,0 +1,22 @@
+Description: Fix locale override issue in privilege escalation
+ Remove the pam_env.so configuration that forces system default locale from
+ /etc/default/locale. This prevents user locale preferences from being
+ overridden during privilege escalation.
+ .
+ Previously, if the system default was English but a user had configured
+ Chinese locale, privilege-escalated programs would incorrectly display
+ in English instead of respecting the user's Chinese preference.
+Origin: https://github.com/polkit-org/polkit/commit/4eff505162591f58ada2f43803572e789b740e59
+ .
+ This patch can be removed after syncing with upstream.
+
+diff --git a/data/polkit-1.debian b/data/polkit-1.debian
+index 6f8af2a..0f95f6d 100644
+--- a/data/polkit-1.debian
++++ b/data/polkit-1.debian
+@@ -4,5 +4,4 @@
+ @include common-account
+ @include common-password
+ session       required   pam_env.so readenv=1 user_readenv=0
+-session       required   pam_env.so readenv=1 envfile=/etc/default/locale user_readenv=0
+ @include common-session-noninteractive
